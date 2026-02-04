@@ -29,6 +29,7 @@ export const specializations = [
     {
         id: 'mern',
         title: 'MERN Stack Development',
+        shortTitle: 'MERN Stack',
         category: 'Web Development',
         icon: Globe,
         shortDesc: 'Build a production-ready "E-Commerce Platform" from scratch. Master the stack by solving real business challenges.',
@@ -68,6 +69,7 @@ export const specializations = [
     {
         id: 'data-eng',
         title: 'Data Engineering (AWS)',
+        shortTitle: 'Data Engineering',
         category: 'Cloud & Data',
         icon: Cloud,
         recommended: true,
@@ -102,6 +104,7 @@ export const specializations = [
     {
         id: 'data-analysis',
         title: 'Data Analysis',
+        shortTitle: 'Data Analysis',
         category: 'Data Science',
         icon: BarChart,
         recommended: true,
@@ -136,6 +139,7 @@ export const specializations = [
     {
         id: 'ai-ml',
         title: 'AI & Machine Learning',
+        shortTitle: 'AI & ML',
         category: 'Artificial Intelligence',
         icon: BrainCircuit,
         recommended: true,
@@ -170,6 +174,7 @@ export const specializations = [
     {
         id: 'robotics',
         title: 'Robotics & AI',
+        shortTitle: 'Robotics',
         category: 'Hardware & AI',
         icon: Bot,
         shortDesc: 'Engineer an "Autonomous Warehouse Delivery Bot" to optimize logistics.',
@@ -203,6 +208,7 @@ export const specializations = [
     {
         id: 'cybersec',
         title: 'Networking & Cyber Security',
+        shortTitle: 'Cyber Security',
         category: 'Security',
         icon: Shield,
         shortDesc: 'Secure a "Corporate Banking Infrastructure" against modern threats.',
@@ -236,6 +242,7 @@ export const specializations = [
     {
         id: 'devops',
         title: 'DevOps Engineering',
+        shortTitle: 'DevOps',
         category: 'Operations',
         icon: Server,
         shortDesc: 'Build an "Automated CI/CD Pipeline" for a high-scale microservices app.',
@@ -269,6 +276,7 @@ export const specializations = [
     {
         id: 'growmetic-360',
         title: 'Growmetic 360°: The Full-Spectrum Innovator',
+        shortTitle: '360° Program',
         category: '360° Business Mindset',
         icon: Infinity,
         recommended: true,
