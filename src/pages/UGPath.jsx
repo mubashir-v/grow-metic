@@ -236,7 +236,7 @@ export default function UGPath() {
                                     </span>
                                 )}
                                 <Icon size={18} className={isSelected ? 'text-brand-primary' : 'text-gray-400'} />
-                                <span>{course.title.split(' ')[0]}</span>
+                                <span>{course.shortTitle}</span>
                                 {course.recommended && (
                                     <span className={`text-[10px] uppercase font-bold px-1.5 py-0.5 rounded ml-1 ${isSelected ? 'bg-brand-primary text-brand-dark' : 'bg-green-100 text-green-700'}`}>
                                         Hot
