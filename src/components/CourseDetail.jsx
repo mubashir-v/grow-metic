@@ -33,18 +33,14 @@ export default function CourseDetail({ course }) {
                         )}
 
                         <div className="flex flex-col sm:flex-row gap-6 items-start">
-                            {/* Illustration */}
-                            <div className="w-full sm:w-48 shrink-0">
-                                <div className="aspect-video sm:aspect-square rounded-xl overflow-hidden bg-gray-50 border border-gray-100 flex items-center justify-center relative group">
+                            {/* Icon Container */}
+                            <div className="w-20 sm:w-24 shrink-0">
+                                <div className="aspect-square rounded-xl overflow-hidden bg-gray-50 border border-gray-100 flex items-center justify-center relative group">
                                     {/* Timeline Dot for Desktop */}
-                                    <div className="hidden sm:block absolute -left-[29px] top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-4 border-white bg-brand-primary shadow-sm z-10" />
+                                    <div className="hidden sm:block absolute -left-[45px] top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-4 border-white bg-brand-primary shadow-sm z-10" />
 
-                                    {mod.image ? (
-                                        <img
-                                            src={mod.image}
-                                            alt={mod.title}
-                                            className="w-full h-full object-contain p-2 hover:scale-105 transition-transform duration-500"
-                                        />
+                                    {mod.icon ? (
+                                        <mod.icon size={32} className="text-brand-primary group-hover:scale-110 transition-transform duration-300" />
                                     ) : (
                                         <Icon size={32} className="text-gray-300" />
                                     )}

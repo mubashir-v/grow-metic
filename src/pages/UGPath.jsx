@@ -12,14 +12,17 @@ import {
     Server,
     Network,
     ShieldCheck,
-    Clock,
+
     CheckCircle2,
     Rocket,
     Waypoints,
-    ChevronRight
+    ChevronRight,
+    Cloud,
+    Layout
 } from 'lucide-react';
 import RoadmapItem from '../components/RoadmapItem';
 import CourseDetail from '../components/CourseDetail';
+import ArchitectureDiagram from '../components/ArchitectureDiagram';
 import { specializations } from '../data/specializations';
 
 const MainSection = ({ title, subtitle, icon: Icon, children, isLast }) => (
@@ -70,59 +73,44 @@ const MainSection = ({ title, subtitle, icon: Icon, children, isLast }) => (
 
 const jumpStartModule = [
     {
-        title: "Programming DSA using Python",
-        description: "Build strong logic and problem-solving skills using Python. Learn data structures and algorithms in a way that is directly applicable to industry scenarios.",
-        icon: Code2
-    },
-    {
-        title: "SQL",
-        description: "Master database management and querying. Learn how to store, manipulate, and retrieve data efficiently.",
-        icon: Database
-    },
-    {
-        title: "Web Basics using Flask",
-        description: "An entry point to backend and frontend development. Create simple web applications using Python's Flask framework.",
+        title: "Customer Solution (Web & App)",
+        description: "The customer-facing solution. A digital storefront to reach users globally and generate the raw data that powers the business.",
         icon: Globe
     },
     {
-        title: "Data Processing",
-        description: "Process real-world data from your web applications. Learn to clean, transform, and move data from files to SQL tables using Python.",
-        icon: FileJson
+        title: "Data Engineering (The Source)",
+        description: "The data processing solution. A reliable pipeline system to collect scattered raw data and transform it into a clean, usable asset.",
+        icon: Database
     },
     {
-        title: "Data Analysis & Visualization",
-        description: "Derive insights from data using Python libraries and create meaningful visualizations to represent trends.",
+        title: "Data Analytics (The Insight)",
+        description: "The decision-making solution. A reporting layer that analyzes past performance to track KPIs and guide executive strategy.",
         icon: LineChart
     },
     {
-        title: "AI & ML Concepts",
-        description: "Introduction to Artificial Intelligence and Machine Learning foundations. Understand the core concepts starting the journey.",
+        title: "Machine Learning (The Brain)",
+        description: "The prediction solution. An intelligence engine that learns from history to forecast demand and automate complex decisions.",
         icon: BrainCircuit
     },
     {
-        title: "Gen AI Concepts",
-        description: "Explore the cutting-edge world of Generative AI and how it's transforming industries.",
+        title: "Generative AI (The Creator)",
+        description: "The automation solution. A creative engine that scales support and content generation to handle tasks at zero marginal cost.",
         icon: Sparkles
     },
     {
-        title: "IoT with Controllers",
-        description: "Hands-on internet of things using small controllers like ESP32. Connect the physical world to the digital.",
+        title: "IoT (The Connected World)",
+        description: "The physical tracking solution. A sensor network that captures real-world data from warehouses and machinery for total visibility.",
         icon: Cpu
     },
     {
-        title: "Networking Fundamentals",
-        description: "Understand how the internet works, protocols (HTTP/TCP/IP), and how devices communicate in a networked environment.",
-        icon: Network
+        title: "Cloud & DevOps (The Infrastructure)",
+        description: "The scaling solution. A robust backbone ensuring the business stays online, agile, and ready to serve millions of users.",
+        icon: Cloud
     },
     {
-        title: "Cybersecurity Basics",
-        description: "Learn the importance of security, basic threats, and best practices to secure applications and data.",
+        title: "Cyber Security (The Shield)",
+        description: "The protection solution. A defense system ensuring brand trust and operational continuity against modern digital threats.",
         icon: ShieldCheck
-    },
-    {
-        title: "DevOps Fundamentals",
-        description: "Learn the basics of deployment and operations. Understand how software is delivered and maintained in production.",
-        icon: Server
     }
 ];
 
@@ -145,9 +133,9 @@ export default function UGPath() {
             transition={{ duration: 0.5 }}
             className="max-w-7xl mx-auto space-y-0"
         >
-            {/* Step 1: Jump Start */}
+            {/* Step 1: Industry Mindset */}
             <MainSection
-                title="Jump Start Module"
+                title="Industry Mindset Module"
                 subtitle="&quot;Hello World&quot; to Industry"
                 icon={Rocket}
                 isLast={false}
@@ -158,38 +146,26 @@ export default function UGPath() {
                         From logic building to deployment, get a taste of everything before choosing your specialization.
                     </p>
 
-                    <div className="flex items-center gap-2">
-                        <span className="inline-flex items-center gap-2 px-4 py-2 bg-brand-dark text-white rounded-full text-sm font-medium shadow-md">
-                            <Clock size={16} className="text-brand-primary" />
-                            <span>Estimated Duration: 120 Hours</span>
-                        </span>
-                    </div>
+
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-                    {/* Left Column: Roadmap */}
-                    <div className="lg:col-span-2 space-y-2">
-                        {jumpStartModule.map((item, index) => (
-                            <RoadmapItem
-                                key={index}
-                                {...item}
-                                index={index}
-                                isLast={index === jumpStartModule.length - 1}
-                            />
-                        ))}
+                <div className="flex flex-col gap-12">
+                    {/* Full Width Diagram */}
+                    <div className="w-full">
+                        <ArchitectureDiagram modules={jumpStartModule} />
                     </div>
 
-                    {/* Right Column: Key Takeaways */}
-                    <div className="lg:col-span-1 sticky top-24">
-                        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 overflow-hidden relative">
+                    {/* Key Takeaways - Centered/Grid */}
+                    <div className="max-w-4xl mx-auto w-full">
+                        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 overflow-hidden relative">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/10 rounded-full -mr-16 -mt-16 blur-2xl"></div>
 
-                            <h3 className="text-xl font-bold text-brand-dark mb-4 flex items-center gap-2">
-                                <CheckCircle2 className="text-brand-primary" size={20} />
+                            <h3 className="text-xl font-bold text-brand-dark mb-6 flex items-center gap-2">
+                                <CheckCircle2 className="text-brand-primary" size={24} />
                                 Key Takeaways
                             </h3>
 
-                            <div className="space-y-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
                                 {takeaways.map((point, i) => (
                                     <div key={i} className="flex items-start gap-3">
                                         <div className="w-1.5 h-1.5 rounded-full bg-brand-secondary mt-2 shrink-0" />

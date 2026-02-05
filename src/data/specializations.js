@@ -14,90 +14,96 @@ import {
     Infinity,
     Layers,
     Sparkles,
-    Briefcase
+    Briefcase,
+    Settings,
+    PieChart,
+    Map,
+    Activity,
+    Box,
+    GitBranch,
+    Lock,
+    Smartphone,
+    Monitor
 } from 'lucide-react';
 
-// Images assigned based on module context
-const IMG_PLANNING = '/assets/images/student_planning.png';
-const IMG_CODING = '/assets/images/student_coding.png';
-const IMG_ANALYSIS = '/assets/images/student_analysis.png';
-const IMG_CLOUD = '/assets/images/student_cloud.png';
-const IMG_AI = '/assets/images/student_ai.png';
-const IMG_LEADERSHIP = '/assets/images/student_leadership.png';
+
 
 export const specializations = [
-    {
-        id: 'mern',
-        title: 'MERN Stack Development',
-        shortTitle: 'MERN Stack',
-        category: 'Web Development',
-        icon: Globe,
-        shortDesc: 'Build a production-ready "E-Commerce Platform" from scratch. Master the stack by solving real business challenges.',
-        modules: [
-            {
-                title: 'The Storefront (UI)',
-                description: 'First, we need a face for our business. Design and build the customer-facing Home and Product pages using React to ensure a pixel-perfect first impression.',
-                topics: ['Figma to React', 'Component Design', 'Responsive Layouts', 'UX Principles'],
-                image: IMG_PLANNING
-            },
-            {
-                title: 'User Action (Logic)',
-                description: 'Now, let\'s make it work. Add functionality for users to browse, search products, and manage their interactive shopping cart state.',
-                topics: ['State Management (Redux)', 'React Hooks', 'Dynamic Filtering', 'User Interactions'],
-                image: IMG_CODING
-            },
-            {
-                title: 'The Engine (Backend)',
-                description: 'We need to save data. Connect the frontend to a secure Node.js server. Build APIs to handle real-time inventory checks and order placement.',
-                topics: ['REST API Design', 'Node.js & Express', 'MongoDB Schema', 'Data Validation'],
-                image: IMG_CODING
-            },
-            {
-                title: 'Gatekeeper (Security)',
-                description: 'Protect the customers. Implement robust Authentication (Login/Signup) to secure user profiles and payments.',
-                topics: ['JWT Authentication', 'Password Encryption', 'Protected Routes', 'Security Best Practices'],
-                image: IMG_CLOUD
-            },
-            {
-                title: 'Go Live (Deployment)',
-                description: 'Open for business. Package the app using Docker and deploy it to a live cloud server so customers worldwide can visit your shop.',
-                topics: ['Dockerizing Apps', 'CI/CD Pipelines', 'Cloud Deployment', 'Domain & SSL'],
-                image: IMG_CLOUD
-            }
-        ]
-    },
+
     {
         id: 'data-eng',
-        title: 'Data Engineering (AWS)',
+        title: 'Data Engineering',
         shortTitle: 'Data Engineering',
         category: 'Cloud & Data',
         icon: Cloud,
         recommended: true,
-        shortDesc: 'Architect an "End-to-End Retail Analytics Pipeline". Move data from raw sources to business insights on AWS.',
+        shortDesc: 'Architect an "End-to-End Retail Analytics Pipeline". Move data from raw sources to business insights on cloud infrastructure.',
         modules: [
             {
-                title: 'Raw Collection',
-                description: 'The data is messy and scattered. Write scripts to capture raw logs from the E-Commerce app and dump them into our Data Lake.',
-                topics: ['Data Ingestion', 'Python Scripting', 'AWS S3 Data Lake', 'Handling JSON/Logs'],
-                image: IMG_CLOUD
+                title: 'Programming Fundamentals',
+                description: 'Build the logic. Master data structures and algorithms (DSA) to write efficient code for processing massive datasets.',
+                topics: ['Data Structures', 'Algorithms', 'Complexity Analysis', 'Problem Solving'],
+                icon: Code
             },
             {
-                title: 'The Cleanup (ETL)',
-                description: 'It\'s too messy to read. Build a Spark job to clean, format, and filter the data, turning chaos into structured tables.',
-                topics: ['PySpark Transformations', 'Data Cleaning', 'AWS Glue', 'Schema Enforcement'],
-                image: IMG_CODING
+                title: 'Python for Data Engineering',
+                description: 'Script the flow. Learn Python automation, file handling, and interaction with APIs and databases for engineering tasks.',
+                topics: ['Python Scripting', 'API Integration', 'File Processing', 'Database Connectivity'],
+                icon: Terminal
             },
             {
-                title: 'The Vault (Warehousing)',
-                description: 'Store it for speed. Load the cleaned data into a high-performance Data Warehouse optimized for business questions.',
-                topics: ['Amazon Redshift', 'Data Modeling', 'Star Schema', 'Loading Strategies'],
-                image: IMG_CODING
+                title: 'Web Data Sources',
+                description: 'Know the source. Understand how web applications generate data and how to capture it via logs, APIs, and web scraping.',
+                topics: ['HTTP Protocols', 'Web APIs', 'Log Parsing', 'Data Formatting (JSON/XML)'],
+                icon: Layout
             },
             {
-                title: 'Automation (Orchestration)',
-                description: 'Put it on autopilot. Set up Airflow to run this entire pipeline every midnight automatically, so reports are always fresh.',
-                topics: ['Apache Airflow', 'DAG Scheduling', 'Error Handling', 'Monitoring Pipelines'],
-                image: IMG_CLOUD
+                title: 'Advanced Databases (SQL & NoSQL)',
+                description: 'Store the truth. Deep dive into designing complex schemas with PostgreSQL and handling unstructured data with MongoDB.',
+                topics: ['Advanced SQL Queries', 'Normalization', 'NoSQL Modeling', 'Database Tuning'],
+                icon: Database
+            },
+            {
+                title: 'Data Pipeline Architecture',
+                description: 'Design the pipes. Learn the core concepts of ETL (Extract, Transform, Load) and how to move data reliably between systems.',
+                topics: ['ETL vs ELT', 'Batch vs Streaming', 'Data Ingestion', 'Workflow Orchestration'],
+                icon: Layers
+            },
+            {
+                title: 'Cloud Infrastructure',
+                description: 'Move to the cloud. Deploy your pipelines on robust cloud infrastructure like AWS, utilizing scalable storage and compute.',
+                topics: ['Cloud Storage (S3)', 'Serverless Computing', 'IAM Security', 'Cost Management'],
+                icon: Cloud
+            },
+            {
+                title: 'Big Data Ecosystem',
+                description: 'Scale it up. Process terabytes of data using distributed computing frameworks like Apache Spark and Hadoop.',
+                topics: ['Distributed Computing', 'Apache Spark', 'Hadoop/HDFS', 'Cluster Management'],
+                icon: Server
+            },
+            {
+                title: 'Data Cleaning & Quality',
+                description: 'Refine the fuel. Implement transformation logic to clean, validate, and standardize raw data for analysis.',
+                topics: ['Data Wrangling', 'Schema Validation', 'Quality Checks', 'Error Handling'],
+                icon: Settings
+            },
+            {
+                title: 'Data Presentation & Warehousing',
+                description: 'Store for value. Load processed data into Data Warehouses optimized for fast retrieval and business intelligence.',
+                topics: ['Data Warehousing', 'Star Schema', 'Dimensional Modeling', 'OLAP'],
+                icon: PieChart
+            },
+            {
+                title: 'Analysis & Insights',
+                description: 'Understand the end goal. Learn basic data analysis to understand "what next" after the data is processed.',
+                topics: ['SQL Analytics', 'Basic Visualizations', 'Business Reporting', 'Data Exploration'],
+                icon: BarChart
+            },
+            {
+                title: 'GenAI in Data Engineering',
+                description: 'Modernize the stack. Leverage Generative AI to automate code generation, documentation, and build intelligent data agents.',
+                topics: ['AI-Assisted Coding', 'Automated Documentation', 'Intelligent Agents', 'Future of DE'],
+                icon: Sparkles
             }
         ]
     },
@@ -111,28 +117,82 @@ export const specializations = [
         shortDesc: 'Create a "Sales Performance Dashboard" to drive executive decisions.',
         modules: [
             {
-                title: 'Accessing Reality (SQL)',
-                description: 'The business needs answers. Write complex SQL queries to pull the exact sales numbers from the company database.',
-                topics: ['Advanced SQL', 'Joins & Aggregations', 'Database Querying', 'Data Extraction'],
-                image: IMG_ANALYSIS
+                title: 'Programming Fundamentals & Data Structures',
+                description: 'Build a solid foundation. Master variables, loops, and functions while learning to solve logical problems using core data structures.',
+                topics: ['Variables & Operators', 'Control Statements', 'Stacks & Queues', 'Searching & Sorting'],
+                icon: Code
             },
             {
-                title: 'Cleaning the Noise',
-                description: 'The numbers don\'t add up. Use Python to identify outliers, fix missing values, and prepare the dataset for analysis.',
-                topics: ['Pandas & NumPy', 'Data Wrangling', 'Data Quality', 'Statistical Cleaning'],
-                image: IMG_CODING
+                title: 'Web Technologies & Interactive Applications',
+                description: 'The interface matters. Learn HTML, CSS, and JavaScript to build responsive web applications and interactive data dashboards.',
+                topics: ['HTML & CSS', 'JavaScript Basics', 'DOM Manipulation', 'Responsive Dashboard'],
+                icon: Layout
             },
             {
-                title: 'Finding the Story (EDA)',
-                description: 'Explore the trends. Create initial charts to discover why sales dipped last month. Is it seasonality or a bad product?',
-                topics: ['Exploratory Analysis', 'Hypothesis Testing', 'Trend Identification', 'Business Context'],
-                image: IMG_ANALYSIS
+                title: 'Advanced SQL & Database Design',
+                description: 'Speak to the data. Master complex SQL queries, window functions, and database design to extract precise insights.',
+                topics: ['Advanced SQL', 'Relational Schemas', 'Query Performance', 'NoSQL Basics'],
+                icon: Database
             },
             {
-                title: 'The Executive Dashboard',
-                description: 'Present the solution. Build an interactive Dashboard that the CEO can use to track Revenue and Growth in real-time.',
-                topics: ['PowerBI / Tableau', 'Dashboard Design', 'Visual Storytelling', 'KPI Validation'],
-                image: IMG_LEADERSHIP
+                title: 'Data Pipeline & Engineering',
+                description: 'Move the data. Learn ETL workflows, data collection strategies, and how to automate data processing pipelines using Python.',
+                topics: ['ETL Workflows', 'Data Transformation', 'Pipeline Automation', 'Data Collection'],
+                icon: Layers
+            },
+            {
+                title: 'Cloud Computing for Data & AI',
+                description: 'Scale to the cloud. Understand cloud service models and core AWS services for storage, processing, and security.',
+                topics: ['AWS Core Services', 'Cloud Storage', 'Processing on Cloud', 'Cloud Security'],
+                icon: Cloud
+            },
+            {
+                title: 'Big Data Technologies',
+                description: 'Handle massive scale. Explore the ecosystem of Hadoop, Spark, and Databricks for distributed big data processing.',
+                topics: ['Hadoop Ecosystem', 'Apache Spark', 'PySpark', 'Databricks'],
+                icon: Database
+            },
+            {
+                title: 'Python Programming',
+                description: 'The language of data. Master Python syntax, functions, modules, and Object-Oriented Programming for automation and development.',
+                topics: ['Python Syntax', 'OOP Concepts', 'File Handling', 'Exception Handling'],
+                icon: Terminal
+            },
+            {
+                title: 'Statistics for Data Science',
+                description: 'Understand the numbers. Learn measures of central tendency, dispersion, probability distributions, and hypothesis testing.',
+                topics: ['Mean/Median/Mode', 'Standard Deviation', 'Probability', 'Hypothesis Testing'],
+                icon: BarChart
+            },
+            {
+                title: 'Data Analysis & Visualization',
+                description: 'Tell a story with data. Clean and explore datasets using Excel and Tableau to create meaningful reports and visualizations.',
+                topics: ['Data Wrangling', 'EDA Lifecycle', 'Excel Analysis', 'Tableau Dashboards'],
+                icon: PieChart
+            },
+            {
+                title: 'Python for Data Science',
+                description: 'Data toolkit. Leverage powerful libraries like NumPy and Pandas for numerical computing and complex data manipulation.',
+                topics: ['NumPy Arrays', 'Pandas DataFrames', 'Data Manipulation', 'Visual Libraries'],
+                icon: Terminal
+            },
+            {
+                title: 'Machine Learning',
+                description: 'Predict outcomes. Train supervised and unsupervised models including regression, classification, and decision trees.',
+                topics: ['Supervised Learning', 'Feature Engineering', 'Regression Models', 'Model Evaluation'],
+                icon: BrainCircuit
+            },
+            {
+                title: 'Deep Learning',
+                description: 'Mimic the brain. Build and train neural networks using TensorFlow and Keras for complex pattern recognition.',
+                topics: ['Neural Networks', 'CNN & RNN', 'TensorFlow', 'Keras'],
+                icon: BrainCircuit
+            },
+            {
+                title: 'Generative AI',
+                description: 'Create new content. Explore LLMs, prompt engineering, and build AI-powered assistants and text generation tools.',
+                topics: ['Large Language Models', 'Prompt Engineering', 'AI Chatbots', 'Ethical AI'],
+                icon: Sparkles
             }
         ]
     },
@@ -146,28 +206,64 @@ export const specializations = [
         shortDesc: 'Develop a "Smart Customer Recommendation Engine" to boost engagement.',
         modules: [
             {
-                title: 'Listening to Behavior',
-                description: 'What do users like? Collect and process user interaction history to create a "feature set" that describes their preferences.',
-                topics: ['Data Collection', 'Feature Engineering', 'User Profiling', 'Matrix Construction'],
-                image: IMG_ANALYSIS
+                title: 'Programming Fundamentals',
+                description: 'Build the logic. Master data structures and algorithms (DSA) to write efficient code for complex AI models.',
+                topics: ['Data Structures', 'Algorithms', 'Optimization Logic', 'Problem Solving'],
+                icon: Code
             },
             {
-                title: 'Training the Brain',
-                description: 'Teach the machine. Feed the history into an ML algorithm so it learns to predict what a user might buy next.',
-                topics: ['Model Selection', 'Scikit-Learn', 'Training Loops', 'Accuracy Metrics'],
-                image: IMG_CODING
+                title: 'Python for AI Development',
+                description: 'The language of AI. Master Python specifically for AI workloads, including automation, libraries, and environment management.',
+                topics: ['Advanced Python', 'NumPy & Pandas', 'Virtual Envs', 'Package Management'],
+                icon: Terminal
             },
             {
-                title: 'Optimization & Tuning',
-                description: 'Make it smarter. Tweak the model\'s internal settings (hyperparameters) to improve its guess rate from 70% to 95%.',
-                topics: ['Hyperparameter Tuning', 'Grid Search', 'Overfitting Checks', 'Model Validation'],
-                image: IMG_AI
+                title: 'App Intelligence (Web & DB)',
+                description: 'The context layer. Understand Web Architectures and Database designs (SQL/NoSQL) to identify where AI adds value.',
+                topics: ['Web Architectures', 'DB Schema Design', 'Business Logic', 'AI Injection Points'],
+                icon: Layout
             },
             {
-                title: 'Deployment (API)',
-                description: 'Connect it to the app. Wrap the model in an API so the E-Commerce website can ask for recommendations in real-time.',
-                topics: ['FastAPI / Flask', 'Model Serialization', 'API Integration', 'Response Optimization'],
-                image: IMG_CLOUD
+                title: 'Data Pipelines for AI',
+                description: 'Feed the beast. Learn how data flows from source to model, ensuring high-quality input for training.',
+                topics: ['Data Ingestion', 'Feature Stores', 'Automated Pipelines', 'Data Versioning'],
+                icon: Layers
+            },
+            {
+                title: 'Big Data & Scalability',
+                description: 'Scale the training. Process massive datasets needed for modern AI using distributed computing tools.',
+                topics: ['Spark for ML', 'Distributed Training', 'Cloud Data', 'Scalability Patterns'],
+                icon: Database
+            },
+            {
+                title: 'Data Analysis & Prep',
+                description: 'Know your data. Perform Exploratory Data Analysis (EDA) to understand distributions and clean noise before training.',
+                topics: ['Exploratory Analysis', 'Visualization', 'Data Cleaning', 'Feature Selection'],
+                icon: BarChart
+            },
+            {
+                title: 'Machine Learning Core',
+                description: 'The foundation. Master supervised and unsupervised learning algorithms to solve prediction and classification problems.',
+                topics: ['Regression/Classification', 'Scikit-Learn', 'Model Evaluation', 'Ensemble Methods'],
+                icon: BrainCircuit
+            },
+            {
+                title: 'Deep Learning & Vision',
+                description: 'See the world. Build Neural Networks using TensorFlow and PyTorch. Master Computer Vision with YOLO for object detection.',
+                topics: ['Neural Networks', 'TensorFlow/Keras', 'CNNs', 'YOLO Object Detection'],
+                icon: Activity
+            },
+            {
+                title: 'NLP & Transformers',
+                description: 'Understand language. Process text data using RNNs and modern Transformer architectures to build chatbots and translators.',
+                topics: ['Text Processing', 'RNNs & LSTMs', 'Transformers', 'Sentiment Analysis'],
+                icon: Terminal
+            },
+            {
+                title: 'Generative AI & LLMs',
+                description: 'Create the future. Master Large Language Models, prompt engineering, and build intelligent AI agents.',
+                topics: ['LLMs (GPT/Llama)', 'Prompt Engineering', 'LangChain', 'AI Agents'],
+                icon: Sparkles
             }
         ]
     },
@@ -180,65 +276,68 @@ export const specializations = [
         shortDesc: 'Engineer an "Autonomous Warehouse Delivery Bot" to optimize logistics.',
         modules: [
             {
-                title: 'The Body (Hardware)',
-                description: 'Build the machine. Interface the micro-controller with motors for movement and sensors to detect the environment.',
-                topics: ['Circuit Design', 'Sensor Interface', 'Motor Drivers', 'Embedded C'],
-                image: IMG_AI
+                title: 'Programming Fundamentals',
+                description: 'Build logic. Master data structures and algorithms (DSA) to write efficient control logic for physical machines.',
+                topics: ['C++ Basics', 'Memory Management', 'Pointers & References', 'Hardware Logic'],
+                icon: Code
             },
             {
-                title: 'The Brain (OS)',
-                description: 'Give it life. Install ROS (Robot Operating System) to manage the hardware and allow different parts to talk to each other.',
-                topics: ['ROS 2 Setup', 'Nodes & Topics', 'Linux for Robots', 'System Architecture'],
-                image: IMG_CODING
+                title: 'Languages of Robotics',
+                description: 'Speak the language. Master C++ for low-level hardware control and Python for high-level AI and scripting.',
+                topics: ['Advanced C++', 'Python for Robotics', 'OOP Patterns', 'Hardware Abstraction'],
+                icon: Terminal
             },
             {
-                title: 'The Eyes (Perception)',
-                description: 'Let it see. Use Lidar and Cameras to create a digital map of the warehouse floor so it knows where obstacles are.',
-                topics: ['Lidar Mapping', 'Computer Vision/OpenCV', 'SLAM', 'Object Detection'],
-                image: IMG_AI
+                title: 'Embedded Systems & IoT',
+                description: 'The bridge. Learn how code talks to atoms. Interface microcontrollers with sensors and motors to sense and move.',
+                topics: ['Microcontrollers (ESP32)', 'GPIO & Interrupts', 'Sensor Protocols', 'Motor Control'],
+                icon: Cpu
             },
             {
-                title: 'The Pilot (Navigation)',
-                description: 'Move autonomously. Program the path-finding algorithms so it can drive from Shelf A to Packing Station B without hitting anything.',
-                topics: ['Path Planning (A*)', 'Autonomous Navigation', 'Obstacle Avoidance', 'Motion Control'],
-                image: IMG_AI
+                title: 'The Automation Business',
+                description: 'The gap. Understand Warehouse Management Systems (WMS) and how data is stored (SQL) to identify automation needs.',
+                topics: ['WMS Logic', 'SQL for Logistics', 'Automation ROI', 'Process Optimization'],
+                icon: Briefcase
+            },
+            {
+                title: 'Robot Operating System',
+                description: 'The framework. Master ROS 2, the industry standard middleware that allows different robot parts to communicate.',
+                topics: ['Nodes & Topics', 'Pub/Sub Model', 'Services & Actions', 'Linux for Robotics'],
+                icon: Settings
+            },
+            {
+                title: 'Perception & Connectivity',
+                description: 'The eyes. Use Lidar, Cameras, and industrial protocols (MQTT/Modbus) to create a digital map of the environment.',
+                topics: ['Computer Vision', 'Lidar Mapping', 'IoT Protocols', 'Sensor Fusion'],
+                icon: Activity
+            },
+            {
+                title: 'Autonomous Navigation',
+                description: 'The pilot. Implement SLAM and path-planning algorithms to enable robots to move safely from Point A to Point B.',
+                topics: ['SLAM', 'A* Pathfinding', 'Obstacle Avoidance', 'Navigation Stack'],
+                icon: Map
+            },
+            {
+                title: 'Robotic Manipulation',
+                description: 'The hands. Program robotic arms to pick, place, and sort objects with precision based on business logic.',
+                topics: ['Inverse Kinematics', 'Grasping Logic', 'Coordinate Systems', 'Arm Control'],
+                icon: Bot
+            },
+            {
+                title: 'Simulation & Digital Twins',
+                description: 'The test ground. Prototype your robots in 3D physics simulators (Gazebo/Isaac) to validate designs before building.',
+                topics: ['Gazebo/Isaac Sim', 'URDF Modeling', 'Physics Engines', 'Virtual Testing'],
+                icon: Monitor
+            },
+            {
+                title: 'AI-Powered Robotics',
+                description: 'The future. Integrate Vision ML and GenAI to create smarter robots that can adapt to unstructured environments.',
+                topics: ['Vision Transformers', 'Reinforcement Learning', 'AI Edge Deployment', 'Smart Decisioning'],
+                icon: Sparkles
             }
         ]
     },
-    {
-        id: 'cybersec',
-        title: 'Networking & Cyber Security',
-        shortTitle: 'Cyber Security',
-        category: 'Security',
-        icon: Shield,
-        shortDesc: 'Secure a "Corporate Banking Infrastructure" against modern threats.',
-        modules: [
-            {
-                title: 'Building the Perimeter',
-                description: 'Design the fortress. Architect a secure network topology with firewalls and DMZs to isolate sensitive banking data.',
-                topics: ['Network Architecture', 'Firewalls & DMZ', 'Subnetting', 'Secure Protocols'],
-                image: IMG_CLOUD
-            },
-            {
-                title: 'The Attack (Red Team)',
-                description: 'Act like a hacker. Attempt to break into your own system using Kali Linux tools to find weak spots and vulnerabilities.',
-                topics: ['Penetration Testing', 'SQL Injection', 'Vulnerability Scanning', 'Kali Linux'],
-                image: IMG_CODING
-            },
-            {
-                title: 'The Defense (Blue Team)',
-                description: 'Patch the holes. Fix the vulnerabilities you found and harden the servers against future attacks.',
-                topics: ['System Hardening', 'Patch Management', 'Secure Configuration', 'Access Control'],
-                image: IMG_CLOUD
-            },
-            {
-                title: 'The Watchtower (SOC)',
-                description: 'Constant vigilance. Set up monitoring tools to detect and alert on any suspicious activity in real-time.',
-                topics: ['SIEM Tools', 'Log Monitoring', 'Threat Detection', 'Incident Response'],
-                image: IMG_ANALYSIS
-            }
-        ]
-    },
+
     {
         id: 'devops',
         title: 'DevOps Engineering',
@@ -248,81 +347,135 @@ export const specializations = [
         shortDesc: 'Build an "Automated CI/CD Pipeline" for a high-scale microservices app.',
         modules: [
             {
-                title: 'Packaging (Docker)',
-                description: 'No more "it works on my machine". Package the application into lightweight, portable containers that run anywhere.',
-                topics: ['Docker Basics', 'Dockerfile', 'Container Management', 'Microservices'],
-                image: IMG_CLOUD
+                title: 'Programming & OS Fundamentals',
+                description: 'The toolbox. Master Python automation, Shell scripting, and Linux commands to control servers effectively.',
+                topics: ['Python Scripting', 'Bash/Shell', 'Linux Commands', 'Process Management'],
+                icon: Terminal
             },
             {
-                title: 'Orchestration (K8s)',
-                description: 'Manage the fleet. Deploy hundreds of these containers onto a cluster that self-heals and auto-scales.',
-                topics: ['Kubernetes', 'Cluster Management', 'Pod Autoscaling', 'Service Discovery'],
-                image: IMG_CLOUD
+                title: 'Database Infrastructure (SQL/NoSQL)',
+                description: 'The store. Understand how to provision, secure, and manage RDBMS (PostgreSQL) and NoSQL (MongoDB) databases.',
+                topics: ['DB Provisioning', 'Backup & Replication', 'SQL vs NoSQL', 'Scaling Stores'],
+                icon: Database
             },
             {
-                title: 'The Factory (CI/CD)',
-                description: 'Automate delivery. Build a pipeline that automatically tests and deploys code whenever a developer saves a file.',
-                topics: ['Jenkins / GitHub Actions', 'Automated Testing', 'Deployment Pipelines', 'Version Control'],
-                image: IMG_CODING
+                title: 'Web Application Architecture',
+                description: 'The workload. Understand how modern 3-tier web applications work to better deploy and manage them.',
+                topics: ['Frontend vs Backend', 'API Gateways', 'Load Balancing', 'Caching Strategies'],
+                icon: Globe
             },
             {
-                title: 'The Watchman (SRE)',
-                description: 'Keep it reliable. Set up dashboards to monitor server health and alert the team before the system crashes.',
-                topics: ['Prometheus', 'Grafana Dashboards', 'Alerting Rules', 'Reliability Engineering'],
-                image: IMG_ANALYSIS
+                title: 'Data Engineering Architecture',
+                description: 'The flow. Learn how massive data pipelines are architected and managed in production environments.',
+                topics: ['Pipeline Orchestration', 'Kafka/Messaging', 'ETL Flows', 'Data Reliability'],
+                icon: Layers
+            },
+            {
+                title: 'Data Analysis & Visualization',
+                description: 'The visibility. Learn to query logs and metrics to visualize system health and business impact.',
+                topics: ['Log Analytics', 'Metrics Visualization', 'Dashboards', 'System Health'],
+                icon: BarChart
+            },
+            {
+                title: 'IoT Architecture',
+                description: 'The edge. Understand how connected devices communicate and how to manage edge infrastructure.',
+                topics: ['MQTT & IoT Protocols', 'Edge Computing', 'Device Management', 'Connectivity'],
+                icon: Cpu
+            },
+            {
+                title: 'Cloud Computing Services',
+                description: 'The platform. Master core cloud services (AWS/Azure) for compute, networking, and storage.',
+                topics: ['AWS/Azure Core', 'VPC & Networking', 'IAM & Security', 'Cost Optimization'],
+                icon: Cloud
+            },
+            {
+                title: 'Containerization (Docker)',
+                description: 'The shipping. Package applications into portable containers that run consistently across all environments.',
+                topics: ['Docker Engine', 'Container Security', 'Multi-stage Builds', 'Microservices'],
+                icon: Box
+            },
+            {
+                title: 'Orchestration & CI/CD',
+                description: 'The factory. Scale with Kubernetes and automate the entire software delivery pipeline.',
+                topics: ['Kubernetes (K8s)', 'Helm Charts', 'CI/CD Pipelines', 'GitOps'],
+                icon: GitBranch
+            },
+            {
+                title: 'Generative AI for Ops',
+                description: 'The future assistant. Use GenAI to generate Infrastructure as Code (IaC) and debug production incidents.',
+                topics: ['AI for DevOps', 'Auto-Remediation', 'IaC Generation', 'Incident Response'],
+                icon: Sparkles
             }
         ]
     },
+
     {
-        id: 'growmetic-360',
-        title: 'Growmetic 360°: The Full-Spectrum Innovator',
-        shortTitle: '360° Program',
-        category: '360° Business Mindset',
-        icon: Infinity,
-        recommended: true,
-        shortDesc: 'The industry needs "360° Thinkers," not just coders. Develop a holistic business mindset by mastering every domain: App, Data, AI, & Ops.',
+        id: 'web-app',
+        title: 'Web App Development',
+        shortTitle: 'Web App',
+        category: 'Web Development',
+        icon: Globe,
+        shortDesc: 'Build a production-ready "E-Commerce Platform" from scratch. Master the stack by solving real business challenges.',
         modules: [
             {
-                title: 'The Product (MVP)',
-                description: 'It starts with an idea. Build the core Web & Mobile platforms (MERN + Flutter) where customers actually interact with the business.',
-                topics: ['Full Stack Dev', 'Mobile App', 'MVP Strategy', 'User Experience'],
-                image: IMG_PLANNING
+                title: 'Programming Fundamentals',
+                description: 'Refine the logic. Master problem-solving using JavaScript. Understand algorithms that power efficient web applications.',
+                topics: ['JavaScript Logic', 'Arrays & Objects', 'ES6+ Features', 'Functional Programming'],
+                icon: Code
             },
             {
-                title: 'The Data Layer',
-                description: 'Capture the usage. Build pipelines to collect user data and store it, so we can understand what\'s happening in the business.',
-                topics: ['Data Pipelines', 'Big Data Processing', 'Data Lake', 'Analytics'],
-                image: IMG_ANALYSIS
+                title: 'Web Fundamentals',
+                description: 'The skeleton. Master HTML5 and CSS3 to structure content and design beautiful, responsive layouts for any device.',
+                topics: ['Semantic HTML', 'CSS Flexbox/Grid', 'Responsive Design', 'Accessibility'],
+                icon: Layout
             },
             {
-                title: 'The Intelligence (AI)',
-                description: 'Predict the future. Use that data to train AI models that forecast sales and recommend products to users.',
-                topics: ['Machine Learning', 'Predictive Models', 'Personalization', 'Data Science'],
-                image: IMG_CODING
+                title: 'JavaScript Deep Dive',
+                description: 'Bring it to life. Learn the core language of the web, focusing on DOM manipulation, events, and asynchronous programming.',
+                topics: ['DOM Manipulation', 'Event Handling', 'Async/Await', 'Fetch API'],
+                icon: Terminal
             },
             {
-                title: 'The Automation (GenAI)',
-                description: 'Scale the support. Integrate Generative AI agents to handle customer queries and automate content creation.',
-                topics: ['LLM Integration', 'AI Agents', 'Automation', 'Natural Language'],
-                image: IMG_AI
+                title: 'Databases (SQL & NoSQL)',
+                description: 'Store the data. Master both structured (MySQL) and flexible (MongoDB) databases to handle user data efficiently.',
+                topics: ['Schema Design', 'SQL Queries', 'NoSQL Documents', 'Data Relations'],
+                icon: Database
             },
             {
-                title: 'The Physical World',
-                description: 'Move the atoms. Simulate the robotic warehouse that physically fulfills the orders placed on the app.',
-                topics: ['Robotics (ROS)', 'IoT Integration', 'Automation Logic', 'Hardware Control'],
-                image: IMG_AI
+                title: 'Backend Development',
+                description: 'The engine. Build powerful server-side applications using Node.js and Express to handle API requests and business logic.',
+                topics: ['Node.js Runtime', 'Express Server', 'RESTful APIs', 'Middleware'],
+                icon: Server
             },
             {
-                title: 'The Infrastructure',
-                description: 'Scale the globe. Deploy this entire ecosystem onto the cloud with automated pipelines to serve millions of users.',
-                topics: ['Cloud Architecture', 'DevOps Pipelines', 'Kubernetes', 'Global Scale'],
-                image: IMG_CLOUD
+                title: 'Frontend Framework',
+                description: 'The interface. Master React.js to build dynamic, single-page applications with reusable component architectures.',
+                topics: ['React Components', 'Props & State', 'React Router', 'Component Lifecycle'],
+                icon: Globe
             },
             {
-                title: 'The Leadership',
-                description: 'Lead the industry. brings it all together with Agile management, effective communication, and strategic decision making.',
-                topics: ['Agile Leadership', 'Communication', 'Strategy', 'Team Management'],
-                image: IMG_LEADERSHIP
+                title: 'Advanced Frontend',
+                description: 'Scale the UI. Manage complex application state globally using Redux and enhance performance with advanced hooks.',
+                topics: ['Redux Toolkit', 'Custom Hooks', 'Performance Optimization', 'Context API'],
+                icon: Layers
+            },
+            {
+                title: 'Full Stack Integration',
+                description: 'Connect the dots. Link your frontend to your backend securely, handling authentication and data flow seamlessly.',
+                topics: ['API Integration', 'JWT Auth', 'Secure Data Flow', 'Error Handling'],
+                icon: Infinity
+            },
+            {
+                title: 'Cloud & Deployment',
+                description: 'Go live. Dockerize your application and deploy it to cloud platforms like Vercel or AWS for the world to see.',
+                topics: ['Git & GitHub', 'Docker Basics', 'CI/CD Pipelines', 'Cloud Hosting'],
+                icon: Cloud
+            },
+            {
+                title: 'GenAI for Web',
+                description: 'Future proof. Integrate AI models to add smart features like chatbots or content generation to your web apps.',
+                topics: ['AI API Integration', 'Smart Features', 'Chatbot UI', 'Prompt Engineering'],
+                icon: Sparkles
             }
         ]
     }
