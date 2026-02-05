@@ -32,7 +32,7 @@ export default function CourseDetail({ course }) {
                             <div className="hidden sm:block absolute left-[15px] top-8 bottom-[-32px] w-0.5 bg-gray-100" />
                         )}
 
-                        <div className="flex flex-col sm:flex-row gap-6 items-start">
+                        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center sm:items-start text-center sm:text-left">
                             {/* Icon Container */}
                             <div className="w-20 sm:w-24 shrink-0">
                                 <div className="aspect-square rounded-xl overflow-hidden bg-gray-50 border border-gray-100 flex items-center justify-center relative group">
@@ -48,11 +48,11 @@ export default function CourseDetail({ course }) {
                             </div>
 
                             {/* Content */}
-                            <div className="flex-1 space-y-3 pt-2">
+                            <div className="flex-1 space-y-3 pt-0 sm:pt-2">
                                 <h4 className="text-lg font-bold text-brand-dark">{mod.title}</h4>
                                 <p className="text-gray-600 text-sm leading-relaxed">{mod.description}</p>
 
-                                <div className="flex flex-wrap gap-2 pt-2">
+                                <div className="flex flex-wrap gap-2 pt-2 justify-center sm:justify-start">
                                     {mod.topics?.map((topic, i) => (
                                         <span key={i} className="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded border border-gray-100 flex items-center gap-1.5">
                                             <div className="w-1 h-1 rounded-full bg-brand-secondary" />

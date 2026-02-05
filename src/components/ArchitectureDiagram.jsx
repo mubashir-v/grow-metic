@@ -8,20 +8,20 @@ const Block = ({ title, icon: Icon, color, onClick, isSelected }) => (
         whileTap={{ scale: 0.98 }}
         onClick={onClick}
         className={`
-            relative flex flex-col items-center justify-center p-4 rounded-xl border-2 cursor-pointer transition-all duration-300
+            relative flex flex-col items-center justify-center p-3 sm:p-4 rounded-xl border-2 cursor-pointer transition-all duration-300 w-full h-full
             ${isSelected
                 ? 'bg-brand-dark text-white border-brand-dark shadow-lg ring-2 ring-brand-primary/50'
                 : 'bg-white text-gray-700 border-gray-100 hover:border-brand-primary/30 hover:shadow-md'
             }
         `}
     >
-        <div className={`p-2 rounded-lg mb-2 ${isSelected ? 'bg-white/10' : 'bg-gray-50'}`}>
-            <Icon size={24} className={isSelected ? 'text-brand-primary' : color} />
+        <div className={`p-1.5 sm:p-2 rounded-lg mb-1.5 sm:mb-2 ${isSelected ? 'bg-white/10' : 'bg-gray-50'}`}>
+            <Icon size={20} className={`${isSelected ? 'text-brand-primary' : color} sm:w-6 sm:h-6`} />
         </div>
-        <span className="text-xs sm:text-sm font-bold text-center leading-tight">{title}</span>
+        <span className="text-[11px] sm:text-sm font-bold text-center leading-tight">{title}</span>
 
         {isSelected && (
-            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-brand-dark rotate-45 border-r border-b border-brand-dark"></div>
+            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-brand-dark rotate-45 border-r border-b border-brand-dark hidden sm:block"></div>
         )}
     </motion.div>
 );
@@ -41,18 +41,18 @@ export default function ArchitectureDiagram({ modules }) {
     return (
         <div className="space-y-6 select-none">
             {/* Diagram Container */}
-            <div className="relative p-6 sm:p-10 rounded-3xl bg-white border border-gray-200 shadow-sm overflow-hidden">
+            <div className="relative p-4 sm:p-10 rounded-3xl bg-white border border-gray-200 shadow-sm overflow-hidden">
                 {/* Background Decor */}
                 <div className="absolute inset-0 pattern-grid-lg opacity-[0.03]"></div>
 
-                <div className="relative z-10 flex flex-col gap-8">
+                <div className="relative z-10 flex flex-col gap-6 sm:gap-8">
 
-                    {/* Application Flow Layer */}
-                    <div className="flex flex-col sm:flex-row gap-8 items-stretch justify-center">
+                    {/* Application Flow Layer - Horizontal Scroll on Mobile */}
+                    <div className="flex flex-row overflow-x-auto pb-4 -mb-4 sm:pb-0 sm:mb-0 gap-4 sm:gap-8 items-stretch sm:justify-center snap-x no-scrollbar px-1">
 
                         {/* Zone 1: Sources */}
-                        <div className="flex flex-col gap-4 flex-1 min-w-[140px]">
-                            <div className="text-xs uppercase font-bold text-gray-400 tracking-wider text-center mb-1">Source</div>
+                        <div className="flex flex-col gap-3 sm:gap-4 flex-1 min-w-[130px] sm:min-w-[140px] snap-center">
+                            <div className="text-[10px] sm:text-xs uppercase font-bold text-gray-400 tracking-wider text-center mb-1">Source</div>
                             <Block
                                 title="Web & App"
                                 icon={getModule('Web').icon}
@@ -70,16 +70,16 @@ export default function ArchitectureDiagram({ modules }) {
                         </div>
 
                         {/* Connector Arrow */}
-                        <div className="hidden sm:flex flex-col justify-center text-gray-300">
-                            <div className="h-0.5 w-8 bg-current"></div>
+                        <div className="flex flex-col justify-center text-gray-300 min-w-[20px] items-center">
+                            <div className="h-0.5 w-4 sm:w-8 bg-current"></div>
                             <div className="-mt-1.5 ml-auto -mr-1">
                                 <ArrowRight size={16} />
                             </div>
                         </div>
 
                         {/* Zone 2: The Pipeline */}
-                        <div className="flex flex-col gap-4 flex-1 min-w-[140px]">
-                            <div className="text-xs uppercase font-bold text-gray-400 tracking-wider text-center mb-1">Pipeline</div>
+                        <div className="flex flex-col gap-3 sm:gap-4 flex-1 min-w-[130px] sm:min-w-[140px] snap-center">
+                            <div className="text-[10px] sm:text-xs uppercase font-bold text-gray-400 tracking-wider text-center mb-1">Pipeline</div>
                             <div className="h-full">
                                 <Block
                                     title="Data Engineering"
@@ -92,16 +92,16 @@ export default function ArchitectureDiagram({ modules }) {
                         </div>
 
                         {/* Connector Arrow */}
-                        <div className="hidden sm:flex flex-col justify-center text-gray-300">
-                            <div className="h-0.5 w-8 bg-current"></div>
+                        <div className="flex flex-col justify-center text-gray-300 min-w-[20px] items-center">
+                            <div className="h-0.5 w-4 sm:w-8 bg-current"></div>
                             <div className="-mt-1.5 ml-auto -mr-1">
                                 <ArrowRight size={16} />
                             </div>
                         </div>
 
                         {/* Zone 3: Intelligence */}
-                        <div className="flex flex-col gap-4 flex-1 min-w-[140px]">
-                            <div className="text-xs uppercase font-bold text-gray-400 tracking-wider text-center mb-1">Intelligence</div>
+                        <div className="flex flex-col gap-3 sm:gap-4 flex-1 min-w-[130px] sm:min-w-[140px] snap-center">
+                            <div className="text-[10px] sm:text-xs uppercase font-bold text-gray-400 tracking-wider text-center mb-1">Intelligence</div>
                             <Block
                                 title="Data Analytics"
                                 icon={getModule('Analytics').icon}
@@ -119,16 +119,16 @@ export default function ArchitectureDiagram({ modules }) {
                         </div>
 
                         {/* Connector Arrow */}
-                        <div className="hidden sm:flex flex-col justify-center text-gray-300">
-                            <div className="h-0.5 w-8 bg-current"></div>
+                        <div className="flex flex-col justify-center text-gray-300 min-w-[20px] items-center">
+                            <div className="h-0.5 w-4 sm:w-8 bg-current"></div>
                             <div className="-mt-1.5 ml-auto -mr-1">
                                 <ArrowRight size={16} />
                             </div>
                         </div>
 
                         {/* Zone 4: Creation */}
-                        <div className="flex flex-col gap-4 flex-1 min-w-[140px]">
-                            <div className="text-xs uppercase font-bold text-gray-400 tracking-wider text-center mb-1">Outcome</div>
+                        <div className="flex flex-col gap-3 sm:gap-4 flex-1 min-w-[130px] sm:min-w-[140px] snap-center">
+                            <div className="text-[10px] sm:text-xs uppercase font-bold text-gray-400 tracking-wider text-center mb-1">Outcome</div>
                             <div className="h-full">
                                 <Block
                                     title="Generative AI"
@@ -142,12 +142,12 @@ export default function ArchitectureDiagram({ modules }) {
                     </div>
 
                     {/* Infrastructure Foundation Layer */}
-                    <div className="pt-8 border-t border-dashed border-gray-200">
-                        <div className="relative p-4 rounded-xl bg-gray-50 border border-gray-200">
-                            <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-white border border-gray-200 rounded-full text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                    <div className="pt-6 sm:pt-8 border-t border-dashed border-gray-200">
+                        <div className="relative p-3 sm:p-4 rounded-xl bg-gray-50 border border-gray-200">
+                            <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-white border border-gray-200 rounded-full text-[10px] font-bold uppercase tracking-widest text-gray-400 whitespace-nowrap">
                                 Foundation Layer
                             </div>
-                            <div className="flex justify-center gap-6">
+                            <div className="flex flex-wrap justify-center gap-3 sm:gap-6 mt-1">
                                 {(() => {
                                     const CloudMod = getModule('Cloud');
                                     const SecMod = getModule('Security');
@@ -159,16 +159,16 @@ export default function ArchitectureDiagram({ modules }) {
                                             <motion.button
                                                 whileHover={{ scale: 1.05 }}
                                                 onClick={() => setSelectedModule(CloudMod)}
-                                                className={`px-4 py-2 rounded-lg text-sm font-bold border flex items-center gap-2 transition-colors ${selectedModule?.title.includes('Cloud') ? 'bg-brand-dark text-white border-brand-dark' : 'bg-white text-gray-600 border-gray-200'}`}
+                                                className={`px-3 py-2 sm:px-4 sm:py-2 rounded-lg text-xs sm:text-sm font-bold border flex items-center gap-2 transition-colors ${selectedModule?.title.includes('Cloud') ? 'bg-brand-dark text-white border-brand-dark' : 'bg-white text-gray-600 border-gray-200'}`}
                                             >
-                                                <CloudIcon size={16} /> Cloud & DevOps
+                                                <CloudIcon size={14} className="sm:w-4 sm:h-4" /> Cloud & DevOps
                                             </motion.button>
                                             <motion.button
                                                 whileHover={{ scale: 1.05 }}
                                                 onClick={() => setSelectedModule(SecMod)}
-                                                className={`px-4 py-2 rounded-lg text-sm font-bold border flex items-center gap-2 transition-colors ${selectedModule?.title.includes('Security') ? 'bg-brand-dark text-white border-brand-dark' : 'bg-white text-gray-600 border-gray-200'}`}
+                                                className={`px-3 py-2 sm:px-4 sm:py-2 rounded-lg text-xs sm:text-sm font-bold border flex items-center gap-2 transition-colors ${selectedModule?.title.includes('Security') ? 'bg-brand-dark text-white border-brand-dark' : 'bg-white text-gray-600 border-gray-200'}`}
                                             >
-                                                <SecIcon size={16} /> Cyber Security
+                                                <SecIcon size={16} className="sm:w-4 sm:h-4" /> Cyber Security
                                             </motion.button>
                                         </>
                                     );
@@ -198,7 +198,7 @@ export default function ArchitectureDiagram({ modules }) {
                                 </div>
                                 {selectedModule.title}
                             </h3>
-                            <p className="text-gray-300 text-lg leading-relaxed max-w-3xl">
+                            <p className="text-gray-300 text-sm sm:text-lg leading-relaxed max-w-3xl">
                                 {selectedModule.description}
                             </p>
                         </div>
@@ -210,9 +210,9 @@ export default function ArchitectureDiagram({ modules }) {
                         </button>
                     </motion.div>
                 ) : (
-                    <div className="h-full flex flex-col items-center justify-center text-center p-8 border-2 border-dashed border-gray-200 rounded-2xl text-gray-400 bg-gray-50/50">
-                        <Info size={32} className="mb-3 opacity-50" />
-                        <p className="text-base font-medium">Click on any block in the architecture above to explore the industry mindset</p>
+                    <div className="h-full flex flex-col items-center justify-center text-center p-6 sm:p-8 border-2 border-dashed border-gray-200 rounded-2xl text-gray-400 bg-gray-50/50">
+                        <Info size={24} className="mb-3 opacity-50 sm:w-8 sm:h-8" />
+                        <p className="text-sm sm:text-base font-medium">Click on any block to explore</p>
                     </div>
                 )}
             </div>

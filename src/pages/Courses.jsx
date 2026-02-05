@@ -122,7 +122,7 @@ const takeaways = [
     "Industry-ready mindset for selecting a specialization"
 ];
 
-export default function UGPath() {
+export default function Courses() {
     const [selectedCourseId, setSelectedCourseId] = useState(specializations[0].id);
     const selectedCourse = specializations.find(s => s.id === selectedCourseId);
 

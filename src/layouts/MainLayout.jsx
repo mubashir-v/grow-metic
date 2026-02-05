@@ -2,9 +2,7 @@ import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const tabs = [
-  { id: 'ug', label: 'UG Program', path: '/ug' },
-  { id: 'pg', label: 'PG Program', path: '/pg' },
-  { id: 'open', label: 'Open Program', path: '/open' },
+  { id: 'courses', label: 'Courses', path: '/courses' },
 ];
 
 export default function MainLayout() {
@@ -20,18 +18,18 @@ export default function MainLayout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex-shrink-0 flex items-center cursor-pointer" onClick={() => navigate('/')}>
-               {/* Logo placeholder - using text for now, assuming logo image will be added later */}
-               <div className="flex items-center gap-2">
-                 <div className="w-8 h-8 relative">
-                   {/* Abstract flower/star shape from logo */}
-                    <svg viewBox="0 0 100 100" className="w-full h-full text-brand-primary fill-current">
-                        <path d="M50 0 C60 30 70 30 100 50 C70 70 60 70 50 100 C40 70 30 70 0 50 C30 30 40 30 50 0 Z" fill="currentColor" />
-                    </svg>
-                 </div>
-                 <span className="font-bold text-xl tracking-tight">growmetic</span>
-               </div>
+              {/* Logo placeholder - using text for now, assuming logo image will be added later */}
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 relative">
+                  {/* Abstract flower/star shape from logo */}
+                  <svg viewBox="0 0 100 100" className="w-full h-full text-brand-primary fill-current">
+                    <path d="M50 0 C60 30 70 30 100 50 C70 70 60 70 50 100 C40 70 30 70 0 50 C30 30 40 30 50 0 Z" fill="currentColor" />
+                  </svg>
+                </div>
+                <span className="font-bold text-xl tracking-tight">growmetic</span>
+              </div>
             </div>
-            
+
             <nav className="hidden sm:flex space-x-8">
               {tabs.map((tab) => {
                 const isActive = location.pathname.startsWith(tab.path);
@@ -39,9 +37,8 @@ export default function MainLayout() {
                   <button
                     key={tab.id}
                     onClick={() => navigate(tab.path)}
-                    className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${
-                      isActive ? 'text-brand-primary' : 'text-gray-500 hover:text-gray-700'
-                    }`}
+                    className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${isActive ? 'text-brand-primary' : 'text-gray-500 hover:text-gray-700'
+                      }`}
                   >
                     {tab.label}
                     {isActive && (
@@ -57,23 +54,22 @@ export default function MainLayout() {
             </nav>
           </div>
         </div>
-        
+
         {/* Mobile Navigation */}
         <div className="sm:hidden flex justify-around border-t border-gray-100 bg-white">
-           {tabs.map((tab) => {
-             const isActive = location.pathname.startsWith(tab.path);
-             return (
-               <button
-                  key={tab.id}
-                  onClick={() => navigate(tab.path)}
-                  className={`flex-1 py-3 text-xs font-medium text-center ${
-                     isActive ? 'text-brand-primary border-b-2 border-brand-primary' : 'text-gray-500'
+          {tabs.map((tab) => {
+            const isActive = location.pathname.startsWith(tab.path);
+            return (
+              <button
+                key={tab.id}
+                onClick={() => navigate(tab.path)}
+                className={`flex-1 py-3 text-xs font-medium text-center ${isActive ? 'text-brand-primary border-b-2 border-brand-primary' : 'text-gray-500'
                   }`}
-               >
-                 {tab.label}
-               </button>
-             )
-           })}
+              >
+                {tab.label}
+              </button>
+            )
+          })}
         </div>
       </header>
 
