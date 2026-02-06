@@ -8,12 +8,12 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<Home />} />
-          <Route path="courses" element={<Courses />} />
-          {/* Redirect old paths to courses or home */}
-          <Route path="ug" element={<Navigate to="/courses" replace />} />
-          <Route path="pg" element={<Navigate to="/courses" replace />} />
-          <Route path="open" element={<Navigate to="/courses" replace />} />
+          <Route index element={<Courses />} />
+          {/* Redirect old paths to home */}
+          <Route path="courses" element={<Navigate to="/" replace />} />
+          <Route path="ug" element={<Navigate to="/" replace />} />
+          <Route path="pg" element={<Navigate to="/" replace />} />
+          <Route path="open" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
     </BrowserRouter>
