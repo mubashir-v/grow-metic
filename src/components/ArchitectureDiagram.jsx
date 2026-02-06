@@ -52,7 +52,7 @@ export default function ArchitectureDiagram({ modules }) {
 
                         {/* Zone 1: Sources */}
                         <div className="flex flex-col gap-3 sm:gap-4 flex-1 min-w-[130px] sm:min-w-[140px] snap-center">
-                            <div className="text-[10px] sm:text-xs uppercase font-bold text-gray-400 tracking-wider text-center mb-1">Source</div>
+
                             <Block
                                 title="Web & App"
                                 icon={getModule('Web').icon}
@@ -79,7 +79,7 @@ export default function ArchitectureDiagram({ modules }) {
 
                         {/* Zone 2: The Pipeline */}
                         <div className="flex flex-col gap-3 sm:gap-4 flex-1 min-w-[130px] sm:min-w-[140px] snap-center">
-                            <div className="text-[10px] sm:text-xs uppercase font-bold text-gray-400 tracking-wider text-center mb-1">Pipeline</div>
+
                             <div className="h-full">
                                 <Block
                                     title="Data Engineering"
@@ -101,7 +101,7 @@ export default function ArchitectureDiagram({ modules }) {
 
                         {/* Zone 3: Intelligence */}
                         <div className="flex flex-col gap-3 sm:gap-4 flex-1 min-w-[130px] sm:min-w-[140px] snap-center">
-                            <div className="text-[10px] sm:text-xs uppercase font-bold text-gray-400 tracking-wider text-center mb-1">Intelligence</div>
+
                             <Block
                                 title="Data Analytics"
                                 icon={getModule('Analytics').icon}
@@ -128,7 +128,7 @@ export default function ArchitectureDiagram({ modules }) {
 
                         {/* Zone 4: Creation */}
                         <div className="flex flex-col gap-3 sm:gap-4 flex-1 min-w-[130px] sm:min-w-[140px] snap-center">
-                            <div className="text-[10px] sm:text-xs uppercase font-bold text-gray-400 tracking-wider text-center mb-1">Outcome</div>
+
                             <div className="h-full">
                                 <Block
                                     title="Generative AI"
@@ -144,9 +144,7 @@ export default function ArchitectureDiagram({ modules }) {
                     {/* Infrastructure Foundation Layer */}
                     <div className="pt-6 sm:pt-8 border-t border-dashed border-gray-200">
                         <div className="relative p-3 sm:p-4 rounded-xl bg-gray-50 border border-gray-200">
-                            <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-white border border-gray-200 rounded-full text-[10px] font-bold uppercase tracking-widest text-gray-400 whitespace-nowrap">
-                                Foundation Layer
-                            </div>
+
                             <div className="flex flex-wrap justify-center gap-3 sm:gap-6 mt-1">
                                 {(() => {
                                     const CloudMod = getModule('Cloud');

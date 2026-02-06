@@ -73,53 +73,53 @@ const MainSection = ({ title, subtitle, icon: Icon, children, isLast }) => (
 
 const jumpStartModule = [
     {
-        title: "Customer Solution (Web & App)",
-        description: "The customer-facing solution. A digital storefront to reach users globally and generate the raw data that powers the business.",
+        title: "Web & App",
+        description: "Build websites and mobile apps. Learn how to create the digital products that customers use every day.",
         icon: Globe
     },
     {
-        title: "Data Engineering (The Source)",
-        description: "The data processing solution. A reliable pipeline system to collect scattered raw data and transform it into a clean, usable asset.",
+        title: "Data Engineering",
+        description: "Organize the data. Learn how to collect information from different places and make it ready for use.",
         icon: Database
     },
     {
-        title: "Data Analytics (The Insight)",
-        description: "The decision-making solution. A reporting layer that analyzes past performance to track KPIs and guide executive strategy.",
+        title: "Data Analytics",
+        description: "Find the answers. Use data to understand what happened in the past and make better business decisions.",
         icon: LineChart
     },
     {
-        title: "Machine Learning (The Brain)",
-        description: "The prediction solution. An intelligence engine that learns from history to forecast demand and automate complex decisions.",
+        title: "Machine Learning",
+        description: "Predict the future. Teach computers to learn from patterns and make smart predictions automatically.",
         icon: BrainCircuit
     },
     {
-        title: "Generative AI (The Creator)",
-        description: "The automation solution. A creative engine that scales support and content generation to handle tasks at zero marginal cost.",
+        title: "Generative AI",
+        description: "Create new content. Use AI to automatically generate text, images, and code to speed up work.",
         icon: Sparkles
     },
     {
-        title: "IoT (The Connected World)",
-        description: "The physical tracking solution. A sensor network that captures real-world data from warehouses and machinery for total visibility.",
+        title: "IoT Devices",
+        description: "Connect the physical world. Learn how smart devices and sensors talk to the internet.",
         icon: Cpu
     },
     {
-        title: "Cloud & DevOps (The Infrastructure)",
-        description: "The scaling solution. A robust backbone ensuring the business stays online, agile, and ready to serve millions of users.",
+        title: "Cloud & DevOps",
+        description: "Keep it running. Learn how to host applications on the internet and ensure they stay online and fast.",
         icon: Cloud
     },
     {
-        title: "Cyber Security (The Shield)",
-        description: "The protection solution. A defense system ensuring brand trust and operational continuity against modern digital threats.",
+        title: "Cyber Security",
+        description: "Protect the system. Learn how to secure data and prevent hackers from attacking applications.",
         icon: ShieldCheck
     }
 ];
 
 const takeaways = [
-    "Solid foundation in Logic Building & Programming",
-    "End-to-end understanding of Data Flow (App -> DB -> Analysis)",
-    "Exposure to emerging tech (AI/ML/IoT/GenAI)",
-    "Understanding of Infrastructure (Networking, Security, DevOps)",
-    "Industry-ready mindset for selecting a specialization"
+    "Understand how IT solves real-world business problems",
+    "Explore diverse career paths: Developer, Data Engineer, Analyst, & DevOps",
+    "See the big picture: From customer apps to business intelligence",
+    "Exposure to emerging technologies driven by business needs",
+    "Confident decision-making for your future specialization"
 ];
 
 export default function Courses() {
@@ -143,7 +143,8 @@ export default function Courses() {
                 <div className="space-y-4 mb-8">
                     <p className="max-w-3xl text-gray-500">
                         A comprehensive foundation module designed to give you a 360° view of the industry.
-                        From logic building to deployment, get a taste of everything before choosing your specialization.
+                        Before you choose your specialization, this module takes you through every critical IT job role required to run a digital business.
+                        You will get hands-on experience in each area—from development to data to operations—allowing you to make an informed decision about your future career path.
                     </p>
 
 
