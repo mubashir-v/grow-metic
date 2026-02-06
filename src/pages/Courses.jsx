@@ -74,42 +74,42 @@ const MainSection = ({ title, subtitle, icon: Icon, children, isLast }) => (
 const jumpStartModule = [
     {
         title: "Web & App",
-        description: "Build websites and mobile apps. Learn how to create the digital products that customers use every day.",
+        description: "Understand how websites and apps work, and how they help a business connect with customers globally.",
         icon: Globe
     },
     {
         title: "Data Engineering",
-        description: "Organize the data. Learn how to collect information from different places and make it ready for use.",
+        description: "Understand how raw business data is collected and transformed into useful information for analysis.",
         icon: Database
     },
     {
         title: "Data Analytics",
-        description: "Find the answers. Use data to understand what happened in the past and make better business decisions.",
+        description: "Understand how past data is analyzed to find patterns and help business owners make better decisions.",
         icon: LineChart
     },
     {
         title: "Machine Learning",
-        description: "Predict the future. Teach computers to learn from patterns and make smart predictions automatically.",
+        description: "Understand how computers learn from data to predict future trends and help businesses automate tasks.",
         icon: BrainCircuit
     },
     {
         title: "Generative AI",
-        description: "Create new content. Use AI to automatically generate text, images, and code to speed up work.",
+        description: "Understand how AI creates new content instantly, helping businesses speed up work and creativity.",
         icon: Sparkles
     },
     {
         title: "IoT Devices",
-        description: "Connect the physical world. Learn how smart devices and sensors talk to the internet.",
+        description: "Understand how physical devices connect to the internet, helping businesses track real-world operations.",
         icon: Cpu
     },
     {
         title: "Cloud & DevOps",
-        description: "Keep it running. Learn how to host applications on the internet and ensure they stay online and fast.",
+        description: "Understand how applications are hosted online, ensuring businesses stay open and fast for users.",
         icon: Cloud
     },
     {
         title: "Cyber Security",
-        description: "Protect the system. Learn how to secure data and prevent hackers from attacking applications.",
+        description: "Understand how digital systems are protected, helping businesses keep their data safe from attacks.",
         icon: ShieldCheck
     }
 ];
